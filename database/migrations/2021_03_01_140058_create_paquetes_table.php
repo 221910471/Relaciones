@@ -15,9 +15,19 @@ class CreatePaquetesTable extends Migration
     {
         Schema::create('paquetes', function (Blueprint $table) {
             $table->id();
+            $table->string('codigo');
+            $table->string('destinatario');
+            $table->string('direc_destinatario');
+            $table->string('descripcion');
+
+            $table->unsignedBigInteger('provincia_id');
+            $table->foreign('provincia_id')->references('id')->on('provincias');
+            
+            
             $table->timestamps();
         });
     }
+
 
     /**
      * Reverse the migrations.

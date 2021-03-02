@@ -15,6 +15,11 @@ class CreateCamionerosTable extends Migration
     {
         Schema::create('camioneros', function (Blueprint $table) {
             $table->id();
+            $table->string('tel');
+            $table->integer('poblacion');
+            $table->string('nombre');
+            $table->float('salario');
+            $table->string('direc');
             $table->timestamps();
         });
     }
